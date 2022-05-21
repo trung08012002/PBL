@@ -15,8 +15,11 @@ namespace LoginForm
         public string id { get =>id ; set => textBox2.Text= value  ; }
         public string firstName { get =>firstName ; set =>textBox3.Text=value; }
         public string lastName { get =>lastName ; set => textBox4.Text=value; }
-        public string gender { get =>gender ; set =>{ radioButton1.Checked = (value == "nam" ? true : false);
-                radioButton2.Checked = (value == "nu" ? true : false);
+        public string gender { get => gender;  set { 
+                if (gender == "male")
+                     radioButton1.Checked=true;
+                else radioButton2.Checked=true;
+
             } }
         public string email { get =>email; set =>textBox5.Text=value ; }
         public DateTime sinhnhat { get =>sinhnhat ; set => dateTimePicker1.Value=value; }
