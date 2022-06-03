@@ -38,3 +38,12 @@ C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\bin\Debug\
 C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\bin\Debug\LoginForm.pdb
 C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\bin\Debug\Interop.WMPLib.dll
 C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\bin\Debug\EntityFramework.dll
+C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\bin\Debug\EntityFramework.xml
+C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\obj\Debug\LoginForm.textboxcustom.resources
+C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\obj\Debug\LoginForm.Form5.resources
+C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\obj\Debug\LoginForm.csproj.CopyComplete
+C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\obj\Debug\LoginForm.doanhinh.resources
+C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\bin\Debug\MaterialSkin.dll

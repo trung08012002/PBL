@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace LoginForm
 {
-    public partial class Form3 : Form, IuserView
+    public partial class Form3 : Form
     {
         public string id { get =>id ; set => textBox2.Text= value  ; }
         public string firstName { get =>firstName ; set =>textBox3.Text=value; }
@@ -34,36 +34,15 @@ namespace LoginForm
             InitializeComponent();
         }
 
-        public event EventHandler SearchEvent;
-        public event EventHandler AddNewEvent;
-        public event EventHandler DeleteEvent;
-        public event EventHandler EditEvent;
-        public event EventHandler SaveEvent;
-        public event EventHandler CancelEvent;
+       
 
-        private void Form3_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void toolTip1_Popup(object sender, PopupEventArgs e)
-        {
-
-        }
+     
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        void IuserView.setUserBindingSource(BindingSource userlist)
-        {
-            throw new NotImplementedException();
-        }
-
-        void IuserView.Show()
-        {
-            throw new NotImplementedException();
-        }
+    
     }
 }
