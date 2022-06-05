@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,7 +48,15 @@ namespace LoginForm.BBL
             };
             return temp;
         }
-        public doanhinhDTO randomhinh(int indexdadung,int index,string[] listHinhAnh,int[] listindex)
+        //game doan hinh
+        public Image ConvertByteArrayToImage(byte[] data)
+        {
+            using (MemoryStream ms = new MemoryStream(data))
+            {
+                return Image.FromStream(ms);
+            }
+        }
+        public doanhinhDTO randomhinh(int index,string[] listHinhAnh,int[] listindex)
         {
             bool check;
             Random rd = new Random();
@@ -68,7 +78,7 @@ namespace LoginForm.BBL
             } while (check == false);
             return new doanhinhDTO
             {
-                indexdadung = indexdadung,
+                
                 listHinhAnh = listHinhAnh,
                 index=index,
                 listindex=listindex,
@@ -152,5 +162,20 @@ namespace LoginForm.BBL
                 return true;
             else return false;
         }
+        public void deletehinhanh(string msha)
+        {
+            QLENG db=new QLENG();
+            ImageDoanHinh temp=db.ImageDoanHinhs.Find(msha);
+            db.ImageDoanHinhs.Remove(temp);
+            db.SaveChanges();
+        }
+        public void addhinhanh(int i,string urlfile,string dapan)
+        {
+            QLENG db = new QLENG();
+            db.ImageDoanHinhs.Add(new ImageDoanHinh { id = i.ToString(), url = urlfile, content = dapan });
+            db.SaveChanges();
+        }
+        //thong ke
+
     }
 }

@@ -10,8 +10,10 @@ namespace LoginForm.DTO
     public class ImageDoanHinh
     {
         [Key]
-        public  string id;
-        public string url;
-        public string content;
+        public  string id { get; set; }
+        [Required]
+        public string url { get; set; }
+
+        public string content { get; set; }
     }
 }

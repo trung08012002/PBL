@@ -21,37 +21,25 @@ namespace LoginForm
         string[] listHinhAnh;
         int[] listindex;
         int timeremainder;
-        string[] listDapAn =
-        {
-            "crossroad",
-            "undercharge",
-            "fishbowl",
-            "bookmobile",
-            "handgun",
-            "earring",
-        };
+        string[] listDapAn;
         Button[] listBtn;
         Button[] listbtndapan;
         public doanhinh()
         {
             InitializeComponent();
-            
+            QLENG db = new QLENG();
         }
 
        
         private void chuyenquacautieptheo()
         {
-            
-            if (indexdadung == listHinhAnh.Length - 1)
-            {
-                MessageBox.Show("Game over");
-                return;
-            }
+
+           
             timerReload();
             XoaBtnDapAn();
             deleteallrandom();
-            doanhinhDTO temp = BBLQL.Instance.randomhinh(indexdadung, index, listHinhAnh, listindex);
-            indexdadung = temp.indexdadung;
+            doanhinhDTO temp = BBLQL.Instance.randomhinh( index, listHinhAnh, listindex);
+           
             index = temp.index;
             for (int i = 0; i < temp.listindex.Length; i++)
             {
@@ -64,10 +52,15 @@ namespace LoginForm
 
             pictureBox1.BackgroundImage = Image.FromFile(listHinhAnh[index]);
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
+            
             listindex[++indexdadung] = index;
-            label1.Text ="So diem cua ban : "+ (5 * indexdadung).ToString();
+            Console.WriteLine(indexdadung);
+            label1.Text = "So diem cua ban : " + (5 * (indexdadung)).ToString();
+           
             TaoBtnDapAn();
             randomdapan();
+            
+
         }
         
         private void TaoBtnDapAn()
@@ -116,22 +109,38 @@ namespace LoginForm
 
         private void doanhinh_Load(object sender, EventArgs e)
         {
-
+            QLENG db = new QLENG();
             timerReload();
             label1.Text = "So diem cua ban : 0";
-            listHinhAnh=new string[6];
-            listindex = new int[listHinhAnh.Length];
+            int soluong = db.ImageDoanHinhs.Count();
+            listHinhAnh =new string[soluong];
+            listDapAn=new string[soluong];
+            listindex = new int[soluong];
             for(int i=0;i<listindex.Length;i++)
             {
                 listindex[i] = -1;
-            }
-            for (int i = 0; i < listHinhAnh.Length;i++)
+            }           
+            int indexhinhanh = 0;
+            foreach(ImageDoanHinh i in db.ImageDoanHinhs)
             {
-                listHinhAnh[i] = "AnhDoanHinh/" + i + ".jpg";
+                listHinhAnh[indexhinhanh] = i.url;
+                listDapAn[indexhinhanh] = i.content;
+                indexhinhanh++;
             }
-            Random rd=new Random();
+            
+            //for (int i = 0; i < db.ImageDoanHinhs.Count();i++)
+            //{
+              //  ImageDoanHinh temp = db.ImageDoanHinhs.Where(image => image.id == i.ToString());
+                //listHinhAnh[i] = temp.url;
+            //}
+            //for (int i = 0; i < listHinhAnh.Length;i++)
+            //{
+            //  listHinhAnh[i] = "AnhDoanHinh/" + i + ".jpg";
+            //}
+            Random rd =new Random();
             index = rd.Next(0, listHinhAnh.Length);
             listindex[indexdadung] = index;
+           
             TaoBtnDapAn();
             randomdapan();
             pictureBox1.BackgroundImage = Image.FromFile(listHinhAnh[index]);
@@ -178,7 +187,7 @@ namespace LoginForm
             
             for(int i=0;i<listbtndapan.Length;i++)
             {
-                Console.WriteLine(i);
+                
                 if(listbtndapan[i].Text =="")
                 {
                     
@@ -189,7 +198,18 @@ namespace LoginForm
                         if (checkDapAn(listDapAn, index, listbtndapan))
                         {
                             MessageBox.Show("dung roi");
-                            chuyenquacautieptheo();
+                            if (indexdadung < listHinhAnh.Length-1)
+                                {
+
+                                chuyenquacautieptheo();
+                                }
+                            else
+                            {
+                                label1.Text = "So diem cua ban : " + (5 * (indexdadung+1)).ToString();
+                                MessageBox.Show("Ban da thang");
+                            }
+                            
+                            
                         }
                         else
                         {

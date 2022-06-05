@@ -47,3 +47,4 @@ C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\obj\Debug\
 C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\obj\Debug\LoginForm.csproj.CopyComplete
 C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\obj\Debug\LoginForm.doanhinh.resources
 C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\bin\Debug\MaterialSkin.dll
+C:\Users\LENOVO\Documents\GitHub\PBL\source\repos\LoginForm\LoginForm\obj\Debug\LoginForm.Form4.resources
